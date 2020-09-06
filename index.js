@@ -46,9 +46,19 @@ bot.on('ready', () => {
 });
 
 bot.on('message', message => {
+  let blacklist = JSON.parse(fs.readFileSync("./blacklist.json", "utf8"));
     if(message.content === prefix + 'hi') {
         message.channel.send('Hi!!!')
     }
+
+
+    if (!blacklist[message.author.id]) {
+        blacklist[message.author.id] = {state: false}
+      };
+
+      if (blacklist[message.author.id].state === true) return;
+
+      if (blacklist[message.author.id].state === true) return;
     if(message.content === prefix + 'vote') {
     const fetch = require('node-fetch');
           fetch(`https://voidbots.net/api/auth/voted/750959870953390090`, { headers: { 'voter': `${message.author.id}` } }).then(res => res.json()).then(data => {
