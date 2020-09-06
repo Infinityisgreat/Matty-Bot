@@ -58,8 +58,7 @@ bot.on('message', message => {
 
       if (blacklist[message.author.id].state === true) {
              message.channel.send("You're Blacklisted You're Not Able To Use Commands!")
-
-
+        return;
       } 
 
     if(message.content === prefix + 'vote') {
