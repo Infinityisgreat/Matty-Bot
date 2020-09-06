@@ -36,11 +36,11 @@ fs.readdir('./commands', (err, file) => {
 
 bot.on('ready', () => {
     console.log('Hi')
-    bot.user.setStatus('do_not_disturb')
     bot.user.setPresence({
         activity: {
             name: 'Matty | m.help',
             type: 'WATCHING',
+            status: 'dnd'
         }
     })
 });
