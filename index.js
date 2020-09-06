@@ -56,10 +56,6 @@ bot.on('message', message => {
         blacklist[message.author.id] = {state: false}
       };
 
-      if (blacklist[message.author.id].state === true) {
-             message.channel.send("You're Blacklisted You're Not Able To Use Commands!")
-        return;
-      } 
 
     if(message.content === prefix + 'vote') {
     const fetch = require('node-fetch');
@@ -87,6 +83,11 @@ bot.on('message', message => {
     } catch(e) {
         return;
     }
+
+    if (command, blacklist[message.author.id].state === true) {
+        message.channel.send("You're Blacklisted You're Not Able To Use Commands!")
+   return;
+ } 
 
     if(message.content.includes(message.mentions.users.first())) {
         let mentioned = bot.afk.get(message.mentions.users.first().id);
