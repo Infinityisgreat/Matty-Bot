@@ -70,6 +70,12 @@ bot.on('message', message => {
         return;
     }
 
+    if(message.content.includes(message.mentions.users.first())) {
+        let mentioned = bot.afk.get(message.mentions.users.first().id);
+        if (mentioned) message.channel.send(`**${mentioned.usertag}** is currently afk. Reason: ${mentioned.reason}`);
+    }
+    let afkcheck = bot.afk.get(message.author.id);
+    if (afkcheck) return [bot.afk.delete(message.author.id), message.reply(`you have been removed from the afk list!`).then(msg => msg.delete(5000))];
 });
 
 bot.login(process.env.token);
