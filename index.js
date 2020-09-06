@@ -6,6 +6,8 @@ const prefix = 'm.'
 
 bot.commands = new Discord.Collection();
 bot.aliases = new Discord.Collection();
+bot.afk = new Map();
+
 
 fs.readdir('./commands', (err, file) => {
     if(err) console.log(err);
