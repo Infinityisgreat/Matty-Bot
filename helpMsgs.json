@@ -1,0 +1,17 @@
+{
+  "helpMsg1": [
+    "`ban`,`unban`, `kick`"
+    ],
+  "helpMsg3": [
+    "`rps`, `8ball`"
+  ],
+  "helpMsg4": [
+    "`about`, `serverinfo`, `userinfo `"
+  ],
+  "helpMsg5": [
+    "`f`, ``, `Coming Soon`"
+  ],
+  "helpMsg7": [
+    "`eval`, `exec`, `reload`, blacklist`, `unblacklist`,"
+  ]
+}
