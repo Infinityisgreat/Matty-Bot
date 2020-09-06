@@ -56,9 +56,12 @@ bot.on('message', message => {
         blacklist[message.author.id] = {state: false}
       };
 
-      if (blacklist[message.author.id].state === true) return;
+      if (blacklist[message.author.id].state === true) {
+             message.channel.send("You're Blacklisted You're Not Able To Use Commands!")
 
-      if (blacklist[message.author.id].state === true) return;
+
+      } 
+
     if(message.content === prefix + 'vote') {
     const fetch = require('node-fetch');
           fetch(`https://voidbots.net/api/auth/voted/750959870953390090`, { headers: { 'voter': `${message.author.id}` } }).then(res => res.json()).then(data => {
