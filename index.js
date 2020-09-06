@@ -47,7 +47,7 @@ bot.on('message', message => {
   if(data.voted) {
     return message.channel.send("You Voted!"), console.log('User has voted!');
   }else{
-      message.channel.send("https://voidbots.net/vote/750959870953390090")
+      message.channel.send("https://voidbots.net/bot/750959870953390090/vote")
   }
 }).catch(console.error);
     }
