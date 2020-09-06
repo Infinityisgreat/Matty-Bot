@@ -41,6 +41,14 @@ bot.on('message', message => {
     if(message.content === prefix + 'hi') {
         message.channel.send('Hi!!!')
     }
+    if(message.content === prefix + 'vote') {
+    const fetch = require('node-fetch');
+          fetch(`https://voidbots.net/api/auth/voted/750959870953390090`, { headers: { 'voter': `${message.author.id}` } }).then(res => res.json()).then(data => {
+  if(data.voted) {
+    return message.channel.send("You Voted!"), console.log('User has voted!');
+  }
+}).catch(console.error);
+    }
 
     if(!message.content.startsWith(prefix)) return;
     let args = message.content.slice(prefix.length).trim().split(/ +/g);
