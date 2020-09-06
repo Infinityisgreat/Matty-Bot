@@ -46,6 +46,8 @@ bot.on('message', message => {
           fetch(`https://voidbots.net/api/auth/voted/750959870953390090`, { headers: { 'voter': `${message.author.id}` } }).then(res => res.json()).then(data => {
   if(data.voted) {
     return message.channel.send("You Voted!"), console.log('User has voted!');
+  }else{
+      message.channel.send("https://voidbots.net/vote/750959870953390090")
   }
 }).catch(console.error);
     }
