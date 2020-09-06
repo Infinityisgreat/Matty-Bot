@@ -40,7 +40,7 @@ bot.on('ready', () => {
         activity: {
             name: 'Matty | m.help',
             type: 'WATCHING',
-            status: 'dnd'
+            status: 'do_not_disturb'
         }
     })
 });
