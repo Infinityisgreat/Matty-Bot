@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
     let reason = args.join(' ') ? args.join(' ') : 'I am currently afk, I will reply as soon possible.';
     let afklist = bot.afk.get(message.author.id);
 
-    if (!afklist) {
+    if(!afklist) {
         let construct = {
             id: message.author.id,
             usertag: message.author.tag,

@@ -58,7 +58,7 @@ bot.on('message', message => {
       message.channel.send("https://voidbots.net/bot/750959870953390090/vote")
   }
 }).catch(console.error);
-    }
+    };
 
     if(!message.content.startsWith(prefix)) return;
     let args = message.content.slice(prefix.length).trim().split(/ +/g);
