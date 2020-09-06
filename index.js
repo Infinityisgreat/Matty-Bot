@@ -36,8 +36,8 @@ fs.readdir('./commands', (err, file) => {
 
 bot.on('ready', () => {
     console.log('Hi')
+    bot.user.setStatus('dnd')
     bot.user.setPresence({
-        status: 'dnd',
         activity: {
             name: 'Matty | m.help',
             type: 'WATCHING',
