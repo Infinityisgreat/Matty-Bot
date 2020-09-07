@@ -10,11 +10,6 @@ bot.afk = new Map();
 
 
 
-const ttt = require("discord.js-tictactoe")
-const embed_color = "#ff00aa"
-const start_cmd = "ttt"
-ttt.run(bot, prefix, embed_color, start_cmd)
-
 fs.readdir('./commands', (err, file) => {
     if(err) console.log(err);
 

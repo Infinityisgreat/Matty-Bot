@@ -14,7 +14,7 @@ function checkDays(date) {
 module.exports.run = async (client, message, args) => {
   let user = message.mentions.users.first();
   let muser = message.guild.member(message.mentions.users.first());
-  if(!message.mentions.users.first() && args.lenth > 0){
+  if(!message.mentions.users.first() && args.lenth > 0) {
     user = message.guild.member(args[0]).user
     muser = message.guild.member(args[0]);
 }
@@ -23,7 +23,7 @@ module.exports.run = async (client, message, args) => {
 
   let status = ""
   if(status === null) status = "No Game"
-  if(muser.presence.activities[0].type == 'CUSTOM_STATUS'){
+  if(muser.presence.activities[0].type == 'CUSTOM_STATUS') {
     let cstatus = muser.presence.activities[0].state
     if(muser.presence.activities[0].emoji) {
       if(muser.presence.activities[0].emoji.animated == true){
@@ -32,11 +32,11 @@ module.exports.run = async (client, message, args) => {
       if(muser.presence.activities[0].emoji.animated !== true){
         cstatus = `<:${muser.presence.activities[0].emoji.name}:${muser.presence.activities[0].emoji.id}>${cstatus}`
       }
-    }
+    };
     status = `Custom Status:\n${cstatus}\nApp:\n${muser.presence.activities[1].name}`
   }else{
     status = `${muser.presence.activities[0].type.toLowerCase()}: ${muser.presence.activities[0].name}`
-  }
+  };
 
           const embed = new Discord.MessageEmbed();
           embed.addField("Username", `${user.username}#${user.discriminator}`, true)
@@ -52,7 +52,7 @@ module.exports.run = async (client, message, args) => {
           .addField('Roles', `${muser.roles.cache.array()}`, true)
           .addField('Is Bot', `${user.bot.toString().toUpperCase()}`)
           .setFooter(`© Matty Made By Infinity#2670`)
-      message.channel.send(`${embed}`);
+      message.channel.send(embed);
 };
 
 
