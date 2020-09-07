@@ -82,10 +82,11 @@ bot.on('message', message => {
     }
 
 
-    const ttt = require('discord.js-tictactoe');
-    const embed_color = "#ff00aa"
-    const start_cmd = "ttt"
-    ttt.run(prefix, embed_color, start_cmd)
+    if(message.content === prefix + 'ttt') {
+        const ttt = require('discord.js-tictactoe');
+        const embed_color = "#ff00aa"
+        ttt.run(embed_color)
+    }
 
     if (!blacklist[message.author.id]) {
         blacklist[message.author.id] = {state: false}
