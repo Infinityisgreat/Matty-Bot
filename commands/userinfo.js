@@ -1,15 +1,11 @@
 const moment = require('moment');
 const Discord = require('discord.js');
-
-
 function checkDays(date) {
   let now = new Date();
   let diff = now.getTime() - date.getTime();
   let days = Math.floor(diff / 86400000);
   return days + (days == 1 ? " day" : " days") + " ago";
 };
-
-
 module.exports.run = async (client, message, args) => {
   let user = message.mentions.users.first();
   let muser = message.guild.member(message.mentions.users.first());
