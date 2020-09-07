@@ -38,8 +38,8 @@ module.exports.run = async (client, message, args) => {
     status = `${muser.presence.activities[0].type.toLowerCase()}: ${muser.presence.activities[0].name}`
   }
 
-  const embed = new Discord.MessageEmbed();
-  embed.addField("Username", `${user.username}#${user.discriminator}`, true)
+          const embed = new Discord.MessageEmbed();
+          embed.addField("Username", `${user.username}#${user.discriminator}`, true)
           .addField("ID", `${user.id}`, true)
           .setColor(3447003)
           .setThumbnail(`${user.avatarURL()}`)
@@ -52,7 +52,7 @@ module.exports.run = async (client, message, args) => {
           .addField('Roles', `${muser.roles.cache.array()}`, true)
           .addField('Is Bot', `${user.bot.toString().toUpperCase()}`)
           .setFooter(`© Matty Made By Infinity#2670`)
-      message.channel.send({embed});
+      message.channel.send(`${embed}`);
 };
 
 
