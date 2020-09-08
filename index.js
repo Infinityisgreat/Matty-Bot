@@ -52,16 +52,18 @@ bot.on('message', message => {
         message.channel.send('Hi!!!')
     }
 
-
-
-
+    if(message.content === 'How much could a wood chuck, chuck if a would chuck could chuck wood') {
+        message.channel.send("A Wood Chuck Could Chuck Wood If A Wood Chuck Could Chuck wood")
+    }
     if(message.content === prefix + 'vote') {
     const fetch = require('node-fetch');
           fetch(`https://voidbots.net/api/auth/voted/750959870953390090`, { headers: { 'voter': `${message.author.id}` } }).then(res => res.json()).then(data => {
   if(data.voted) {
-    return message.channel.send("You Voted!"), console.log('User has voted!');
+    return  message.channel.send("You Voted!"), console.log('User has voted!');
   }else{
-      message.channel.send("https://voidbots.net/bot/750959870953390090/vote")
+    const embed = new Discord.MessageEmbed()
+    .addField('Vote Here', value='https://voidbots.net/bots/750959870953390090/vote')
+    message.channel.send({embed})
   }
 }).catch(console.error);
     };
