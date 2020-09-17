@@ -84,7 +84,11 @@ bot.on('message', message => {
         return;
     }
 
+    if (!fuck[message.author.id]) {
+        blacklist[message.author.id] = {state: false}
+      };
 
+      if (fuck[message.author.id].state === true) return message.channel.send("You're Fucking retarted");
 
     if (!blacklist[message.author.id]) {
         blacklist[message.author.id] = {state: false}
