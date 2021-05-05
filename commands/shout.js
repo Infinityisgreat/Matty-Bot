@@ -8,10 +8,10 @@ async function startApp () {
 }
 module.exports.run = (client, msg, args) => {
   if (message.member.hasPermission("KICK_MEMBERS")) {
-     let choice = args.join(" ").toLowerCase();
+     const def = args.join(" ").toLowerCase();
      startApp()
-     noblox.shout(6307818, choice)
-     message.channel.send(`Succefully set the new group shout!`)
+     noblox.shout(6307818, def)
+     msg.channel.send(`Succefully set the new group shout!`)
     }
 }
 
