@@ -40,7 +40,7 @@ bot.on('ready', () => {
     bot.user.setStatus('dnd') 
     bot.user.setPresence({
         activity: {
-            name: 'Matty | m.help',
+            name: 'Matty | m.help test',
             type: 'WATCHING',
         }
     })
